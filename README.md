@@ -1,18 +1,28 @@
 # CircleCI, Dockerhub Demo
 
-## Steps to reproduce.
+A demo project using
 
-## Create repository on Github
+- GitHub as a repository manager with a write-protected master-branch and a PR-based workflow.
+- CircleCi to "validate a website." On success you're allowed to merge your pull-request.
+- Docker Hub automatically builds the latest master-branch and makes the image available.
+
+## TODO
+
+- The Docker image should _of course_ be tagged with a nice version.
+
+## Steps to reproduce
+
+### Create repository on Github
 
 1. Create a new repository on GitHub.
 
-## Subscript project to CircleCI
+### Subscribe project to CircleCI
 
 1. Visit https://circleci.com
 1. Under "Add Projects" find the new repository and click "Set Up Project".
 1. Click "Start Building"
 
-## In your working directory
+### In your working directory
 
 1. Add `config.yml` to `.circleci`-folder with appropriate config,
     valdiation, build, test-images etc.
@@ -23,14 +33,14 @@
 1. `git push -u origin master`
 1. Make a change to the repository and push to a `ready/setup` branch.
 
-## Visit the CircleCI UI
+### Visit the CircleCI UI
 
 1. Go to `https://circleci.com/gh/<username>/<repository>` in a browser,
     you should have a job that's succeeded.
 
 > Otherwise keep making changes and pushing until you have a successful job; it registers as a `ci/circleci: build` status check on Github
 
-## Visit you repository on GitHub
+### Visit your repository on GitHub
 
 1. Go to `Settings -> Branches`
 1. Add a Branch Protection Rule for the `master` branch, choose
@@ -41,13 +51,13 @@
 
 1. Click "Create."
 
-## Add a Dockerfile
+### Add a Dockerfile
 
 1. Create a file called `Dockerfile` with your image build logic
 1. (Optional) Create a file called `.dockerignore` with a white/blacklist of all files that aren't relevant for your image
-1. Create a new commit, push this to a branch and create a pull-request. (Don't merge it yet.)
+1. Create a new commit, push this to a branch and create a pull-request. Don't merge it yet.
 
-## Create a new repository on Docker Hub
+### Create a new repository on Docker Hub
 
 1. Go to [https://hub.docker.com/](https://hub.docker.com/) and log in.
 1. Click "Create Repository"
@@ -58,5 +68,8 @@ On your new repository, visit the "Builds" tab.
 
 1. Click on the "Link to GitHub" button.
 1. Select your organization and the repository you created earlier. Click "Save and Build."
-1. (On GitHub) Merge your pull-request to the `master`-branch
+    > It'll do an empty build on Docker Hub, because our master-branch doesn't yet contain a Dockerfile.
+1. (On GitHub) Merge your pull-request to the `master`-branch.
 1. (On Docker Hub), A new build is triggered after a short while. (You may have to reload the page, to see the effect.)
+
+After a little while your Docker Hub repository should be offering the latest image, the contents of the README.md on GitHub and the Dockerfile.
