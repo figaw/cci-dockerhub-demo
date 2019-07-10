@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    working_directory: /mnt/www
+    docker:
+      - image: validator/validator:latest
+
+    steps:
+      - checkout
+
+      - run:
+          name: validate my html
+          command: vnu /mnt/www/
+
+
+jobs:
+  build:
+    branches:
+      ignore:
+        - master
+        - /no-build/*
