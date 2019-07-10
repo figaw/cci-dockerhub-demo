@@ -20,4 +20,24 @@
 1. `git add .`
 1. `git commit -am "Initial commit"`
 1. `git remote add origin git@github.com:<repository>.git`
-1. `git push origin master:ready/setup`
+1. `git push -u origin master`
+1. Make a change to the repository and push to a `ready/setup` branch.
+
+## Visit the CircleCI UI
+
+1. Go to `https://circleci.com/gh/<username>/<repository>` in a browser,
+    you should have a job that's succeeded.
+
+> This has now been registerd as a `status check` on Github
+
+## Visit you repository on GitHub
+
+1. Go to `Settings -> Branches`
+1. Add a Branch Protection Rule for the `master` branch, choose
+    - Require pull request reviews before merging
+    - Require status checks to pass before merging
+        - Require branches to be up to date before merging
+        - Select the `ci/circleci: build` status check
+    - Include Administrators
+
+1. Click "Create."
