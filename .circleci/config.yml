@@ -21,4 +21,4 @@ workflows:
             branches:
               ignore:
                 - master
-                - /no-build/*
+                - /no-build/.*
