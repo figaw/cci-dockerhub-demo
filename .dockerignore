@@ -1,0 +1,5 @@
+# Ignore everything
+*
+
+# exclude www-folder from being ignored
+!www/
