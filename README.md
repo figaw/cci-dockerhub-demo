@@ -46,3 +46,17 @@
 1. Create a file called `Dockerfile` with your image build logic
 1. (Optional) Create a file called `.dockerignore` with a white/blacklist of all files that aren't relevant for your image
 1. Create a new commit, push this to a branch and create a pull-request. (Don't merge it yet.)
+
+## Create a new repository on Docker Hub
+
+1. Go to [https://hub.docker.com/](https://hub.docker.com/) and log in.
+1. Click "Create Repository"
+1. If you haven't already, link your GitHub to your Docker Hub.
+1. Give your new repository a name, and click "Create"
+
+On your new repository, visit the "Builds" tab.
+
+1. Click on the "Link to GitHub" button.
+1. Select your organization and the repository you created earlier. Click "Save and Build."
+1. (On GitHub) Merge your pull-request to the `master`-branch
+1. (On Docker Hub), A new build is triggered after a short while. (You may have to reload the page, to see the effect.)
