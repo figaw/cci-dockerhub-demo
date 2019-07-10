@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /mnt/www
+    working_directory: /mnt
     docker:
       - image: validator/validator:latest
 
