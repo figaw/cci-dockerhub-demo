@@ -17,7 +17,8 @@ workflows:
   build-verify:
     jobs:
       - build:
-          branches:
-            ignore:
-              - master
-              - /no-build/*
+          filters:
+            branches:
+              ignore:
+                - master
+                - /no-build/*
