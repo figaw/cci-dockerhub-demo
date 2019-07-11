@@ -18,7 +18,7 @@ A demo project using
 
 ### Subscribe project to CircleCI
 
-1. Visit https://circleci.com
+1. Visit [https://circleci.com](https://circleci.com)
 1. Under "Add Projects" find the new repository and click "Set Up Project".
 1. Click "Start Building"
 
